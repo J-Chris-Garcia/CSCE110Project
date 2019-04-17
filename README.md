@@ -34,7 +34,8 @@ percentage.
 5. Plot a line chart that shows the number of movies from drama, horror, action and comedy
 genres released in different months of 2016. You need to plot these in the same graph, with
 proper legends.
-3
+
+
 Deliverables:
 1. The code: Document your code properly. Every function must have a documentation string.
 2. The project report: In your report, include the following.
@@ -46,7 +47,8 @@ match the output of your submitted code.
 Demo video: https://youtu.be/Lk2Ums6sYyw
 Sample output:
 https://drive.google.com/file/d/1fygWJCOoO6oBTwc7pHY03QiIRVAQWZ8Z/view?usp=sharing
-4
+
+
 INSTRUCTIONS:
 1. Project Submission Guidelines:
 Your team must pick one project from the two projects proposed.
