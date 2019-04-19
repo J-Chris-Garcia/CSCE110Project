@@ -4,7 +4,7 @@ from datetime import datetime
 movies_per_month = {} #use this for question 2
 genre_per_month = {} #use this for question 5
 ratings = []
-tickets_per_dist = {} #use this for question 4; it has all the distributors, I did not make an others entry
+tickets_per_dist = {} #use this for question 4
 tickets_per_month = {} #use this for question 3
 
 date_format = '%m/%d/%Y'
@@ -54,6 +54,8 @@ for genre, mon in genre_per_month.items(): #this adds entries to genre_per_month
         
 totalmovies = sum(movies_per_month.values())
 totaltickets = sum(tickets_per_month.values())
+maxmovie, moviemonth = max(zip(movies_per_month.values(), movies_per_month.keys()))
+maxtickets, ticketmonth = max(zip(tickets_per_month.values(), tickets_per_month.keys()))
 
 print("========Dataset details========\n")
 print(f"Number of Movies: {totalmovies}")
@@ -61,3 +63,25 @@ print(f"Number of different genres: {len(genre_per_month)}")
 print(f"Number of different MPAA: {len(ratings)}")
 print(f"Number of different distributors: {len(tickets_per_dist)}")
 print(f"Total number of tickets sold: {totaltickets}")
+print("\n================================\n")
+print(f"Most number of movies released ({maxmovie}) in {moviemonth}.")
+print(f"Most amount of tickets sold ({maxtickets}) in {ticketmonth}.")
+print("\n================================\n")
+print("========Tickets sold by distributors========\n")
+
+Others = 0 #this will get the dictionary with others category
+for dist, amount in tickets_per_dist.items():
+    tickets_per_dist[dist] = (amount/totaltickets)*100
+    
+for dist in list(tickets_per_dist):
+    if tickets_per_dist[dist] < 1:
+        Others += tickets_per_dist[dist]
+        del tickets_per_dist[dist]
+tickets_per_dist["Others"] = Others
+
+tickets_per_dist = dict(sorted(tickets_per_dist.items(), key=lambda x: x[1], reverse=True))
+
+for dist,amount in tickets_per_dist.items():
+    print(f"{dist}  :  {round(amount, 2)}%")
+    
+print("\n================================")
