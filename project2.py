@@ -92,12 +92,38 @@ for dist,amount in tickets_per_dist.items():
     
 print("\n================================")
 
+# import matplotlib module
 import matplotlib.pyplot as plot
-f=plot.figure(2)
-plot.plot(months, [tickets_per_month["January"], tickets_per_month["February"], tickets_per_month["March"], tickets_per_month["April"], tickets_per_month["May"],  tickets_per_month["June"], tickets_per_month["July"], tickets_per_month["August"], tickets_per_month["September"], tickets_per_month["October"], tickets_per_month["November"], tickets_per_month["December"]], color='b', linestyle='-')
 
+# create a plot for question 3
+plot.figure(2)
+# plotting line graph of number of tickets sold each month
+plot.plot(months, [tickets_per_month["January"], tickets_per_month["February"], tickets_per_month["March"], tickets_per_month["April"], tickets_per_month["May"],  tickets_per_month["June"], tickets_per_month["July"], tickets_per_month["August"], tickets_per_month["September"], tickets_per_month["October"], tickets_per_month["November"], tickets_per_month["December"]], color='b', linestyle='-')
+# labeling graph for question 3
 plot.ylabel('Number of tickets sold (in millions)')
 plot.xlabel('Month')
 plot.title('Number of tickets sold in different months in 2016')
 plot.savefig("question3-plot.pdf")
+plot.show()
+
+#create plot for question 5
+plot.figure(4)
+# plotting the number of movies from drama released each month
+plot.plot(months, [genre_per_month["Drama"]["January"], genre_per_month["Drama"]["February"], genre_per_month["Drama"]["March"], genre_per_month["Drama"]["April"], genre_per_month["Drama"]["May"], genre_per_month["Drama"]["June"], genre_per_month["Drama"]["July"], genre_per_month["Drama"]["August"], genre_per_month["Drama"]["September"], genre_per_month["Drama"]["October"], genre_per_month["Drama"]["November"], genre_per_month["Drama"]["December"]], color='b', linestyle='-')
+
+# plotting the number of movies from horrow released each month
+plot.plot(months, [genre_per_month["Horror"]["January"], genre_per_month["Horror"]["February"], genre_per_month["Horror"]["March"], genre_per_month["Horror"]["April"], genre_per_month["Horror"]["May"], genre_per_month["Horror"]["June"], genre_per_month["Horror"]["July"], genre_per_month["Horror"]["August"], genre_per_month["Horror"]["September"], genre_per_month["Horror"]["October"], genre_per_month["Horror"]["November"], genre_per_month["Horror"]["December"]], color='orange', linestyle='-')
+
+# plotting the number of movies from action released each month
+plot.plot(months, [genre_per_month["Action"]["January"], genre_per_month["Action"]["February"], genre_per_month["Action"]["March"], genre_per_month["Action"]["April"], genre_per_month["Action"]["May"], genre_per_month["Action"]["June"], genre_per_month["Action"]["July"], genre_per_month["Action"]["August"], genre_per_month["Action"]["September"], genre_per_month["Action"]["October"], genre_per_month["Action"]["November"], genre_per_month["Action"]["December"]], color='green', linestyle='-')
+
+# plotting the number of movies from comedy released each month
+plot.plot(months, [genre_per_month["Comedy"]["January"], genre_per_month["Comedy"]["February"], genre_per_month["Comedy"]["March"], genre_per_month["Comedy"]["April"], genre_per_month["Comedy"]["May"], genre_per_month["Comedy"]["June"], genre_per_month["Comedy"]["July"], genre_per_month["Comedy"]["August"], genre_per_month["Comedy"]["September"], genre_per_month["Comedy"]["October"], genre_per_month["Comedy"]["November"], genre_per_month["Comedy"]["December"]], color='red', linestyle='-')
+
+# labeling the graph for question 5
+plot.ylabel('Number of movies')
+plot.xlabel('Month')
+plot.title('Number of movies released in different months of 2016')
+plot.legend(['Drama','Horror','Action','Comedy'])
+plot.savefig("question5-plot.pdf")
 plot.show()
