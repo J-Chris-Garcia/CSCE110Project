@@ -2,7 +2,8 @@
 #Author: Josue Garcia, Elissa Grosz, and CheungHing Lam
 #Date: 05/01/2019
 #Email: chrisg000@tamu.edu, elissagrosz@tamu.edu, Cheunghing1113@tamu.edu
-#Description: Option 2: The Netflix Movie Tracker, This code goes through a CSV file with netflix movie data and outputs related stats
+#Description: Option 2: The Netflix Movie Tracker. This code goes through a CSV file with netflix movie data and outputs related statistics.
+
 import csv
 from datetime import datetime
 
@@ -90,3 +91,12 @@ for dist,amount in tickets_per_dist.items():
     print(f"{dist}  :  {round(amount, 2)}%")
     
 print("\n================================")
+
+import matplotlib.pyplot as plot
+f=plot.figure(2)
+plot.plot(months, [tickets_per_month["January"], tickets_per_month["February"], tickets_per_month["March"], tickets_per_month["April"], tickets_per_month["May"],  tickets_per_month["June"], tickets_per_month["July"], tickets_per_month["August"], tickets_per_month["September"], tickets_per_month["October"], tickets_per_month["November"], tickets_per_month["December"]], color='b', linestyle='-')
+
+plot.ylabel('Number of tickets sold')
+plot.xlabel('Months')
+plot.title('Number of tickets sold in different months in 2016')
+f.show()
