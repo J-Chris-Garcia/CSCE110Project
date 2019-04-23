@@ -1,4 +1,9 @@
-import csv 
+#File: project2.py
+#Author: Josue Garcia, Elissa Grosz, and CheungHing Lam
+#Date: 05/01/2019
+#Email: chrisg000@tamu.edu, elissagrosz@tamu.edu, Cheunghing1113@tamu.edu
+#Description: Option 2: The Netflix Movie Tracker, This code goes through a CSV file with netflix movie data and outputs related stats
+import csv
 from datetime import datetime
 
 movies_per_month = {} #use this for question 2
@@ -7,8 +12,8 @@ ratings = []
 tickets_per_dist = {} #use this for question 4
 tickets_per_month = {} #use this for question 3
 
-date_format = '%m/%d/%Y'
-months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+date_format = '%m/%d/%Y' #used to convert data string to datetime object
+months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] #used to add months not in csv
 
 with open ('2016_movie_data.csv', 'rt', encoding = 'ISO-8859-1') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
@@ -54,8 +59,8 @@ for genre, mon in genre_per_month.items(): #this adds entries to genre_per_month
         
 totalmovies = sum(movies_per_month.values())
 totaltickets = sum(tickets_per_month.values())
-maxmovie, moviemonth = max(zip(movies_per_month.values(), movies_per_month.keys()))
-maxtickets, ticketmonth = max(zip(tickets_per_month.values(), tickets_per_month.keys()))
+maxmovie, moviemonth = max(zip(movies_per_month.values(), movies_per_month.keys())) #this finds the max amount of movies per month
+maxtickets, ticketmonth = max(zip(tickets_per_month.values(), tickets_per_month.keys())) #this finds the max amount of tickets per month
 
 print("========Dataset details========\n")
 print(f"Number of Movies: {totalmovies}")
