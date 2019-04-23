@@ -96,7 +96,7 @@ import matplotlib.pyplot as plot
 f=plot.figure(2)
 plot.plot(months, [tickets_per_month["January"], tickets_per_month["February"], tickets_per_month["March"], tickets_per_month["April"], tickets_per_month["May"],  tickets_per_month["June"], tickets_per_month["July"], tickets_per_month["August"], tickets_per_month["September"], tickets_per_month["October"], tickets_per_month["November"], tickets_per_month["December"]], color='b', linestyle='-')
 
-plot.ylabel('Number of tickets sold')
+plot.ylabel('Number of tickets sold (in millions)')
 plot.xlabel('Month')
 plot.title('Number of tickets sold in different months in 2016')
 plot.savefig("question3-plot.pdf")
