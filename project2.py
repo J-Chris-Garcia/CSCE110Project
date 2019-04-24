@@ -114,7 +114,6 @@ plot.title('Number of movies released in different months of 2016')
 plot.savefig("question2-plot.pdf")
 plot.show()
 
-
 #create a plot for question 3
 plot.figure(2)
 #plotting line graph of number of tickets sold each month
@@ -133,7 +132,6 @@ plot.pie(num, labels=lab, shadow=True, autopct='%1.1f%%')
 plot.axis('equal')
 plot.title("Percentage of tickets sold by different distributors")
 plot.show()
-
 
 #create plot for question 5
 plot.figure(4)
