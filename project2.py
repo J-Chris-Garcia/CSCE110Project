@@ -105,7 +105,7 @@ plot.plot(months, [tickets_per_month["January"], tickets_per_month["February"], 
 #labeling graph for question 3
 plot.ylabel('Number of tickets sold (in millions)')
 plot.xlabel('Month')
-plot.title('Number of tickets sold in different months in 2016')
+plot.title('Number of tickets sold in different months of 2016')
 plot.savefig("question3-plot.pdf")
 plot.show()
 
