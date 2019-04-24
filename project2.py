@@ -89,25 +89,31 @@ for dist in list(tickets_per_dist):
 tickets_per_dist["Others"] = Others
 
 tickets_per_dist = dict(sorted(tickets_per_dist.items(), key=lambda x: x[1], reverse=True))
-
 for dist,amount in tickets_per_dist.items():
-    print(f"{dist}  :  {round(amount, 2)}%")
-    
+    print(f"{dist}  :  {round(amount, 2)}%")   
 print("\n================================")
+lab=[]
+for i in tickets_per_dist:
+    lab.append(i)
+num=[]
+for i in tickets_per_dist.values():
+    num.append(i)
+
 
 #import matplotlib module
 import matplotlib.pyplot as plot
 
 #create a plot for question 2
-plot.figure(1)
-#plotting line graph of number of tickets sold each month
+plot.figure(3)
+#plotting bar graph of number of movies released each month
 plot.bar(months, [movies_per_month["January"], movies_per_month["February"], movies_per_month["March"], movies_per_month["April"], movies_per_month["May"],  movies_per_month["June"], movies_per_month["July"], movies_per_month["August"], movies_per_month["September"], movies_per_month["October"], movies_per_month["November"], movies_per_month["December"]], color='b', linestyle='-')
 #labeling graph for question 2
-plot.ylabel('Number of Movies')
+plot.ylabel(' Number of Movies')
 plot.xlabel('Month')
 plot.title('Number of movies released in different months of 2016')
 plot.savefig("question2-plot.pdf")
 plot.show()
+
 
 #create a plot for question 3
 plot.figure(2)
@@ -119,6 +125,15 @@ plot.xlabel('Month')
 plot.title('Number of tickets sold in different months of 2016')
 plot.savefig("question3-plot.pdf")
 plot.show()
+
+#create plot for question 4
+plot.figure(5)
+#plotting the percentage of tickets sold by each distributor
+plot.pie(num, labels=lab, shadow=True, autopct='%1.1f%%')
+plot.axis('equal')
+plot.title("Percentage of tickets sold by different distributors")
+plot.show()
+
 
 #create plot for question 5
 plot.figure(4)
