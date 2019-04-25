@@ -104,7 +104,7 @@ for i in tickets_per_dist.values():
 import matplotlib.pyplot as plot
 
 #create a plot for question 2
-plot.figure(3)
+plot.figure(1)
 #plotting bar graph of number of movies released each month
 plot.bar(months, [movies_per_month["January"], movies_per_month["February"], movies_per_month["March"], movies_per_month["April"], movies_per_month["May"],  movies_per_month["June"], movies_per_month["July"], movies_per_month["August"], movies_per_month["September"], movies_per_month["October"], movies_per_month["November"], movies_per_month["December"]], color='b', linestyle='-')
 #labeling graph for question 2
@@ -126,7 +126,7 @@ plot.savefig("question3-plot.pdf")
 plot.show()
 
 #create plot for question 4
-plot.figure(5)
+plot.figure(3)
 #plotting the percentage of tickets sold by each distributor
 plot.pie(num, labels=lab, shadow=True, autopct='%1.1f%%')
 plot.axis('equal')
