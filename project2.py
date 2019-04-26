@@ -17,8 +17,9 @@ tickets_per_month = {} #use this for question 3
 date_format = '%m/%d/%Y' #used to convert data string to datetime object
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] #used to add months not in csv
 
+file_name = input("Enter the name of the csv file (include .csv): ")
 #create csv file
-with open ('2016_movie_data.csv', 'rt', encoding = 'ISO-8859-1') as csvfile:
+with open (file_name, 'rt', encoding = 'ISO-8859-1') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     next(csvreader) #skip headers
     
